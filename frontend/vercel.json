@@ -1,0 +1,8 @@
+{
+    "rewrites": [
+      {
+        "source": "/api/predict",
+        "destination": "https://YOUR-RAILWAY-URL.up.railway.app/predict"
+      }
+    ]
+  }
