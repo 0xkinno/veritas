@@ -79,7 +79,8 @@ const signer = await ethersProvider.getSigner();
         "Prediction Committed",
         `${data.direction} ${market} · Block #${data.blockNumber} · Hash ${data.txHash?.slice(0, 12)}...`
       );
-      setTimeout(() => fetchPredictions(20).then(setPreds).catch(() => {}), 3000);
+      setTimeout(() => fetchPredictions(20).then(setPreds).catch(() => {}), 8000);
+setTimeout(() => fetchPredictions(20).then(setPreds).catch(() => {}), 15000);
 
     } catch (e) {
       if (e.code === 4001 || e.message?.includes("rejected")) {
