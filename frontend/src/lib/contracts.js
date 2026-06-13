@@ -46,19 +46,25 @@ export function identityContract() {
 }
 
 // ── Fetch all predictions (last N) ──
-export async function fetchPredictions(limit = 30) {
-  const vc    = validationContract();
-  const count = Number(await vc.predCount());
-  if (count === 0) return [];
+export async function fetchPredictions(limit = 50) {
+  try {
+    const vc    = validationContract();
+    const count = Number(await vc.predCount());
+    if (count === 0) return [];
 
-  const ids  = [];
-  for (let i = Math.max(1, count - limit + 1); i <= count; i++) ids.push(i);
+    const ids = [];
+    for (let i = count; i >= Math.max(1, count - limit + 1); i--) ids.push(i);
 
-  const results = await Promise.allSettled(ids.map(id => vc.getPrediction(id)));
-  return results
-    .filter(r => r.status === "fulfilled")
-    .map(r => parsePrediction(r.value))
-    .reverse();
+    const results = await Promise.allSettled(
+      ids.map(id => vc.getPrediction(id))
+    );
+    return results
+      .filter(r => r.status === "fulfilled")
+      .map(r => parsePrediction(r.value));
+  } catch (e) {
+    console.error("fetchPredictions error:", e);
+    return [];
+  }
 }
 
 // ── Fetch predictions for one agent ──
