@@ -21,7 +21,7 @@ export default function Feed() {
     const id = setInterval(() => {
       fetchPredictions(50).then(setPreds).catch(() => {});
       getAllTickers().then(setTickers).catch(() => {});
-    }, 20000);
+    }, 10000);
     return () => clearInterval(id);
   }, []);
 

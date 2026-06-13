@@ -13,7 +13,7 @@ export default function Ledger() {
     fetchPredictions(100)
       .then(p=>{ setPreds(p); setLoading(false); })
       .catch(()=>setLoading(false));
-    const id = setInterval(()=>fetchPredictions(100).then(setPreds).catch(()=>{}), 25000);
+    const id = setInterval(()=>fetchPredictions(100).then(setPreds).catch(()=>{}), 10000);
     return ()=>clearInterval(id);
   },[]);
 
