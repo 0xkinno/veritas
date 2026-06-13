@@ -1,0 +1,6 @@
+{
+    "deploy": {
+      "startCommand": "node predict.js VERITAS-01 ETHUSDT",
+      "restartPolicyType": "ON_FAILURE"
+    }
+  }
