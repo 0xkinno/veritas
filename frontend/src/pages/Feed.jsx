@@ -16,10 +16,10 @@ export default function Feed() {
   const [loading,  setLoading] = useState(true);
 
   useEffect(() => {
-    fetchPredictions(20).then(p => { setPreds(p); setLoading(false); }).catch(() => setLoading(false));
+    fetchPredictions(50).then(p => { setPreds(p); setLoading(false); }).catch(() => setLoading(false));
     getAllTickers().then(setTickers).catch(() => {});
     const id = setInterval(() => {
-      fetchPredictions(20).then(setPreds).catch(() => {});
+      fetchPredictions(50).then(setPreds).catch(() => {});
       getAllTickers().then(setTickers).catch(() => {});
     }, 20000);
     return () => clearInterval(id);
@@ -79,8 +79,8 @@ const signer = await ethersProvider.getSigner();
         "Prediction Committed",
         `${data.direction} ${market} · Block #${data.blockNumber} · Hash ${data.txHash?.slice(0, 12)}...`
       );
-      setTimeout(() => fetchPredictions(20).then(setPreds).catch(() => {}), 8000);
-setTimeout(() => fetchPredictions(20).then(setPreds).catch(() => {}), 15000);
+      setTimeout(() => fetchPredictions(50).then(setPreds).catch(() => {}), 8000);
+setTimeout(() => fetchPredictions(50).then(setPreds).catch(() => {}), 15000);
 
     } catch (e) {
       if (e.code === 4001 || e.message?.includes("rejected")) {

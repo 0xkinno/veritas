@@ -45,6 +45,17 @@ app.post("/predict", async (req, res) => {
   }
 });
 
+app.post("/validate", async (req, res) => {
+    try {
+      const { validatePredictionOnchain } = await import("./onchain.js");
+      const { predId, wasCorrect, exitPrice, pnlUsd } = req.body;
+      const result = await validatePredictionOnchain({ predId, wasCorrect, exitPrice, pnlUsd });
+      res.json(result);
+    } catch (e) {
+      res.status(500).json({ error: e.message });
+    }
+  });
+
 const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {
   console.log(`[VERITAS] Agent server listening on port ${PORT}`);

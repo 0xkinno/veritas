@@ -10,10 +10,10 @@ export default function Ledger() {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    fetchPredictions(50)
+    fetchPredictions(100)
       .then(p=>{ setPreds(p); setLoading(false); })
       .catch(()=>setLoading(false));
-    const id = setInterval(()=>fetchPredictions(50).then(setPreds).catch(()=>{}), 25000);
+    const id = setInterval(()=>fetchPredictions(100).then(setPreds).catch(()=>{}), 25000);
     return ()=>clearInterval(id);
   },[]);
 
@@ -37,7 +37,7 @@ export default function Ledger() {
             }}>{l}</button>
           ))}
         </div>
-        <span style={{fontFamily:"var(--font-mono)",fontSize:11,color:"var(--t3)"}}>{filtered.length} record{filtered.length!==1?"s":""}</span>
+        <span style={{fontFamily:"var(--font-mono)",fontSize:11,fontWeight:700,color:"var(--t2),"}}>{filtered.length} record{filtered.length!==1?"s":""}</span>
       </div>
 
       <div className="vtable">
