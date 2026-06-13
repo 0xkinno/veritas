@@ -23,10 +23,10 @@ Not a trading bot. The accountability infrastructure that makes AI trading hones
 
 | Resource | Link |
 |---|---|
-| **Live App** | https://veritas.vercel.app |
-| **Identity Registry** | `0x[DEPLOYED_ADDRESS]` |
-| **Reputation Registry** | `0x[DEPLOYED_ADDRESS]` |
-| **Validation Registry** | `0x[DEPLOYED_ADDRESS]` |
+| **Live App** | https://veritas-ruby-five.vercel.app |
+| **Identity Registry** | `[View on Mantle Explorer] (https://explorer.sepolia.mantle.xyz/address/0x9D0ED40615845ee6134F475AcCF35e0412CA1EdF)` |
+| **Reputation Registry** | `[View on Mantle Explorer] (https://explorer.sepolia.mantle.xyz/address/0xFa34633c12e5A93166FAA0E54A3D50Fd62Ae8D49)` |
+| **Validation Registry** | `[View on Mantle Explorer] (https://explorer.sepolia.mantle.xyz/address/0x029192f49d95eD5B147cE7E6Fc18d01BDfb513c5)` |
 | **Network** | Mantle Sepolia Testnet (Chain ID 5003) |
 | **GitHub** | https://github.com/0xkinno/veritas |
 | **Demo Video** | [Watch 2-min walkthrough](#) |
@@ -304,9 +304,9 @@ veritas/
 
 | Contract | Address | Explorer |
 |---|---|---|
-| VeritasIdentityRegistry | `0x[TBD]` | [View on Mantle Explorer](#) |
-| VeritasReputationRegistry | `0x[TBD]` | [View on Mantle Explorer](#) |
-| VeritasValidationRegistry | `0x[TBD]` | [View on Mantle Explorer](#) |
+| VeritasIdentityRegistry | `0x9D0ED40615845ee6134F475AcCF35e0412CA1EdF` | [View on Mantle Explorer](https://explorer.sepolia.mantle.xyz/address/0x9D0ED40615845ee6134F475AcCF35e0412CA1EdF) |
+| VeritasReputationRegistry | `0xFa34633c12e5A93166FAA0E54A3D50Fd62Ae8D49` | [View on Mantle Explorer](https://explorer.sepolia.mantle.xyz/address/0xFa34633c12e5A93166FAA0E54A3D50Fd62Ae8D49) |
+| VeritasValidationRegistry | `0x029192f49d95eD5B147cE7E6Fc18d01BDfb513c5` | [View on Mantle Explorer](https://explorer.sepolia.mantle.xyz/address/0x029192f49d95eD5B147cE7E6Fc18d01BDfb513c5) |
 
 Addresses populated after testnet deployment.
 
