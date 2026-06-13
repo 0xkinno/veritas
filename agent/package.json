@@ -1,0 +1,17 @@
+{
+  "name": "veritas-agent",
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": {
+    "predict":     "node predict.js",
+    "predict:eth": "node predict.js VERITAS-01 ETHUSDT",
+    "predict:btc": "node predict.js VERITAS-02 BTCUSDT",
+    "predict:mnt": "node predict.js VERITAS-03 MNTUSDT"
+  },
+  "dependencies": {
+    "groq-sdk":  "^0.7.0",
+    "bybit-api": "^3.10.0",
+    "dotenv":    "^16.0.0",
+    "ethers":    "^6.13.0"
+  }
+}

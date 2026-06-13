@@ -1,0 +1,16 @@
+{
+    "name": "veritas-contracts",
+    "version": "1.0.0",
+    "scripts": {
+      "compile": "npx hardhat compile",
+      "deploy:testnet": "npx hardhat run scripts/deploy.js --network mantle_testnet",
+      "deploy:mainnet": "npx hardhat run scripts/deploy.js --network mantle_mainnet",
+      "verify": "npx hardhat verify --network mantle_testnet"
+    },
+    "devDependencies": {
+      "@nomicfoundation/hardhat-ethers": "^3.0.0",
+      "@nomicfoundation/hardhat-verify": "^2.0.0",
+      "hardhat": "^2.22.0",
+      "dotenv": "^16.0.0"
+    }
+  }
