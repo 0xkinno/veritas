@@ -20,7 +20,7 @@ const ethersAdapter = new EthersAdapter();
 
 export const modal = createAppKit({
   adapters:   [ethersAdapter],
-  projectId:  "b16882842344ea7a3f1a64a5cedb1007",
+  projectId: import.meta.env.VITE_WALLETCONNECT_PROJECT_ID || "b16882842344ea7a3f1a64a5cedb1007",
   networks:   [mantleSepolia],
   defaultNetwork: mantleSepolia,
   metadata: {
