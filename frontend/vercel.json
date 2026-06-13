@@ -3,6 +3,10 @@
       {
         "source": "/api/predict",
         "destination": "https://veritas-production-85b1.up.railway.app/predict"
+      },
+      {
+        "source": "/(.*)",
+        "destination": "/index.html"
       }
     ]
   }
