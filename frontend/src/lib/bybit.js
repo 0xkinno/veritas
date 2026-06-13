@@ -56,3 +56,10 @@ export async function getAllTickers() {
     { symbol:"ARBUSDT", lastPrice:0.084, change24h:-1.4, fundingRate:0.0001 },
   ];
 }
+
+export function formatPrice(price) {
+  if (!price) return "$0";
+  if (price > 1000) return "$" + price.toLocaleString("en-US", { minimumFractionDigits: 2, maximumFractionDigits: 2 });
+  if (price > 1) return "$" + price.toFixed(4);
+  return "$" + price.toFixed(6);
+}
