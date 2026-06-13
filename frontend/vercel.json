@@ -5,6 +5,14 @@
         "destination": "https://veritas-production-85b1.up.railway.app/predict"
       },
       {
+        "source": "/api/tickers",
+        "destination": "https://veritas-production-85b1.up.railway.app/tickers"
+      },
+      {
+        "source": "/api/ticker/:symbol",
+        "destination": "https://veritas-production-85b1.up.railway.app/ticker/:symbol"
+      },
+      {
         "source": "/(.*)",
         "destination": "/index.html"
       }

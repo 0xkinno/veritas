@@ -1,5 +1,7 @@
 // frontend/src/lib/bybit.js — Live Bybit prices via public REST (no auth needed for read)
-const BASE = "https://api.bybit.com";
+const BASE = window.location.hostname === "localhost" 
+  ? "https://api.bybit.com"
+  : "/api";
 
 export async function getTicker(symbol) {
   const r = await fetch(`${BASE}/v5/market/tickers?category=linear&symbol=${symbol}`);
@@ -16,6 +18,10 @@ export async function getTicker(symbol) {
 }
 
 export async function getAllTickers() {
+  if (window.location.hostname !== "localhost") {
+    const res = await fetch("/api/tickers");
+    return res.json();
+  }
   const symbols = ["ETHUSDT","BTCUSDT","MNTUSDT","SOLUSDT","ARBUSDT"];
   const results = await Promise.allSettled(symbols.map(getTicker));
   return results.filter(r => r.status === "fulfilled").map(r => r.value);

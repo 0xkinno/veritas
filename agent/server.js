@@ -13,6 +13,26 @@ app.get("/", (req, res) => {
   res.json({ status: "VERITAS agent online" });
 });
 
+app.get("/tickers", async (req, res) => {
+    try {
+      const { getMultiTickers } = await import("./bybit.js");
+      const tickers = await getMultiTickers();
+      res.json(tickers);
+    } catch (e) {
+      res.status(500).json({ error: e.message });
+    }
+  });
+  
+  app.get("/ticker/:symbol", async (req, res) => {
+    try {
+      const { getTickerData } = await import("./bybit.js");
+      const ticker = await getTickerData(req.params.symbol);
+      res.json(ticker);
+    } catch (e) {
+      res.status(500).json({ error: e.message });
+    }
+  });
+
 app.post("/predict", async (req, res) => {
   try {
     const { agentName, symbol } = req.body;
