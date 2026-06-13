@@ -26,7 +26,7 @@ export const modal = createAppKit({
   metadata: {
     name:        "VERITAS",
     description: "The first accountable AI trader — every decision permanently onchain via ERC-8004",
-    url:         "https://veritas.vercel.app",
+    url:         "https://veritas-ruby-five.vercel.app",
     icons:       ["https://veritas.vercel.app/favicon.ico"],
   },
   features: {

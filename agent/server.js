@@ -1,3 +1,4 @@
+import { getMultiTickers } from "./bybit.js";
 import express from "express";
 import cors from "cors";
 import { runPrediction } from "./predict.js";
@@ -15,9 +16,8 @@ app.get("/", (req, res) => {
 
 app.get("/tickers", async (req, res) => {
     try {
-      const { getMultiTickers } = await import("./bybit.js");
-      const tickers = await getMultiTickers();
-      res.json(tickers);
+      const result = await getMultiTickers();
+      res.json(result);
     } catch (e) {
       res.status(500).json({ error: e.message });
     }
