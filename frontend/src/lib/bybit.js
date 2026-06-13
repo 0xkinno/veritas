@@ -18,15 +18,10 @@ export async function getTicker(symbol) {
 }
 
 export async function getAllTickers() {
-  if (window.location.hostname !== "localhost") {
-    const res = await fetch("/api/tickers");
-    return res.json();
-  }
   const symbols = ["ETHUSDT","BTCUSDT","MNTUSDT","SOLUSDT","ARBUSDT"];
   const results = await Promise.allSettled(symbols.map(getTicker));
   return results.filter(r => r.status === "fulfilled").map(r => r.value);
 }
-
 export function formatPrice(price) {
   if (price > 1000) return "$" + price.toLocaleString("en-US", { maximumFractionDigits: 2 });
   if (price > 1)    return "$" + price.toFixed(3);
