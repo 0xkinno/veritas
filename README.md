@@ -29,8 +29,8 @@ Not a trading bot. The accountability infrastructure that makes AI trading hones
 | **Validation Registry** | [View on Mantle Explorer](https://explorer.sepolia.mantle.xyz/address/0x029192f49d95eD5B147cE7E6Fc18d01BDfb513c5) |
 | **Network** | Mantle Sepolia Testnet (Chain ID 5003) |
 | **GitHub** | https://github.com/0xkinno/veritas |
-| **Demo Video** | [Watch 2-min walkthrough](#) |
-| **DoraHacks** | [Submission page](#) |
+| **Demo Video** | [Watch 2-min walkthrough](https://youtu.be/Q67BFo4N1TQ?si=O5Mv4UEm29h0NHqF) |
+| **DoraHacks** | [Submission page](https://dorahacks.io/hackathon/mantleturingtesthackathon2026/detail) |
 
 ---
 
