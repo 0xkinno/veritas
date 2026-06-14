@@ -53,7 +53,7 @@ export async function fetchPredictions(limit = 50) {
     if (count === 0) return [];
 
     const ids = [];
-    for (let i = count; i >= Math.max(1, count - limit + 1); i--) ids.push(i);
+for (let i = count; i >= 1; i--) ids.push(i);
 
     const results = await Promise.allSettled(
       ids.map(id => vc.getPrediction(id))
